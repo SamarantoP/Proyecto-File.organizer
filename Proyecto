@@ -1,0 +1,45 @@
+import os
+import pathlib
+
+listaDeDirectorios={
+    "Documentos de archivo":[".doc", ".txt", ".docx", ".xlsx", ".ppt", "pptx"],
+    "Imagenes":[".jpg", ".png", ".jpeg"],
+    "Gif":[".gif"],
+    "Videos":[".mp4", ".wmv", ".mov", ".mpg", "mpeg", ".mkv"],
+    "musica":[".mp3", ".msv", ".wav", ".wma"],
+    "Documentos PDF":[".pdf"]
+
+}
+
+while(True):
+    if os.path.exists("Documentos de archivo")==True:
+        pass
+    else:
+        os.mkdir("Documentos de arhivo")
+        continue
+    if os.path.exists("Documentos PDF")==True:
+        pass
+    else:
+        os.mkdir("Documentos PDF")
+        continue
+    if os.path.exists("Imagenes")==True:
+        pass
+    else:
+        os.mkdir("Imagenes")
+        continue
+    if os.path.exists("Gif")==True:
+        pass
+    else: 
+        os.mkdir("Gif")
+    if os.path.exists("Videos")==True:
+        pass
+    else:
+        os.mkdir("Videos")
+        continue
+    if os.path.exists("Musica")==True:
+        pass
+    else:
+        os.mkdir("Musica")
+        continue
+    break 
+
