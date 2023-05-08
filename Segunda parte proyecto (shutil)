@@ -15,42 +15,12 @@ listaDeDirectorios={
 
 }
 
-while(True):
-    if os.path.exists("Documentos de archivo")==True:
-        pass
-    else:
-        os.mkdir("Documentos de arhivo")
-        continue
-    if os.path.exists("Documentos PDF")==True:
-        pass
-    else:
-        os.mkdir("Documentos PDF")
-        continue
-    if os.path.exists("Imagenes")==True:
-        pass
-    else:
-        os.mkdir("Imagenes")
-        continue
-    if os.path.exists("Gif")==True:
-        pass
-    else: 
-        os.mkdir("Gif")
-    if os.path.exists("Videos")==True:
-        pass
-    else:
-        os.mkdir("Videos")
-        continue
-    if os.path.exists("Musica")==True:
-        pass
-    else:
-        os.mkdir("Musica")
-        continue
-    if os.path.exists("Otros archivos")==True:
-        pass
-    else:
-        os.mkdir("Otros archivos")
-        continue
-    break 
+for carpeta in listaDeDirectorios.keys():
+  if  os.path.exists(carpeta):
+      continue
+  os.mkdir(carpeta)
+  
+  break
 
 extensionesarchivo=listaDeDirectorios.values()
 documentos=[_ for _ in os.listdir() if _.endswith(extensionesarchivo)]
