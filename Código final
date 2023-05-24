@@ -1,0 +1,72 @@
+import os
+import pathlib
+import shutil
+os.chdir("/Users/HP/Desktop/prueba del proyecto")
+listaDeDirectorios={
+      "Documentos":[".doc", ".txt", ".docx", ".xlsx", ".ppt", ".pptx", ".md", ".odt", ".ppt", ".pptx", ".rtf",
+                    ".DOC", ".TXT", ".DOCX", ".XLSX", ".PPT", ".PPTX", ".MD", ".ODT", ".PPT", ".PPTX", ".RTF"],
+      "Imagenes":[".jpg", ".png", ".jpeg", ".bmp", ".heif", ".heic", ".psd", ".svg", ".tif", "tiff",
+                  ".JPG", ".PNG", ".JPEG", ".BMP", ".HEIF", ".HEIC", ".PSD", ".SVG", ".TIF", "TIFF"],
+      "Gif":[".gif",
+             ".GIF"],
+      "Videos":[".mp4", ".wmv", ".mov", ".mpg", "mpeg", ".mkv",".avi", ".flv",
+                ".MP4", ".WMV", ".MOV", ".MPG", "MPEG", ".MKV",".AVI", ".FLV"],
+      "Musica":[".mp3", ".msv", ".wav", ".wma",".flac", ".aac", ".ogg", ".wav", ".wave",
+                ".MP3", ".MSV", ".WAV", ".WMA",".FLAC", ".AAC", ".OGG", ".WAV", ".WAVE"],
+      "Documentos PDF":[".pdf",
+                        ".PDF"],
+      "Otros archivos":[".dll", ".drv", ".ini", ".tmp", ".7z", ".jar", ".rar", ".zip",".bat", ".com", ".exe",".css", ".html", 
+                        ".js", ".php", ".xml", ".eml", ".msg", ".ost", ".pst",
+                        ".DLL", ".DRV", ".INI", ".TMP", ".7Z", ".JAR", ".RAR", ".ZIP",".BAT", ".COM", ".EXE",".CSS", ".HTML", 
+                        ".JS", ".PHP", ".XML", ".EML", ".MSG", ".OST", ".PST"]
+}
+
+for x in range(len(listaDeDirectorios)):
+     for carpeta in listaDeDirectorios.keys():  
+        if  os.path.exists(carpeta):
+          continue
+        else:
+            os.mkdir(carpeta)
+            break
+    
+documentos=(tuple(listaDeDirectorios["Documentos"]))
+documentos=[ _ for _ in os.listdir() if _.endswith(documentos)]
+
+for x in documentos:
+    shutil.move(x, "Documentos") 
+
+imagenes=(tuple(listaDeDirectorios["Imagenes"]))
+imagenes=[_ for _ in os.listdir() if _.endswith(imagenes)]
+
+for x in imagenes: 
+    shutil.move(x, "Imagenes")
+
+gif=(tuple(listaDeDirectorios["Gif"]))
+gif=[_ for _ in os.listdir() if _.endswith(gif)]
+
+for x in gif:
+    shutil.move(x, "Gif")
+
+video=(tuple(listaDeDirectorios["Videos"]))
+video=[_ for _ in os.listdir() if _.endswith(video)]
+
+for x in video: 
+    shutil.move(x, "Videos")
+
+musica=(tuple(listaDeDirectorios["Musica"]))
+musica=[_ for _ in os.listdir() if _.endswith(musica)]
+
+for x in musica: 
+    shutil.move(x, "Musica")
+
+pdf=(tuple(listaDeDirectorios["Documentos PDF"]))
+pdf=[_ for _ in os.listdir() if _.endswith(pdf)]
+
+for x in pdf: 
+    shutil.move(x, "Documentos PDF")
+
+otros_archivos=(tuple(listaDeDirectorios["Otros archivos"]))
+otros_archivos=[_ for _ in os.listdir() if _.endswith(otros_archivos)]
+
+for x in otros_archivos: 
+    shutil.move(x, "Otros archivos")
